@@ -1,53 +1,16 @@
-import { useState, useEffect, useRef } from 'react'
+import { useRef } from 'react'
 import { navItems } from './data/navItems'
+import { useActiveSection } from './hooks/useActiveSection'
+import { useScrollToSection } from './hooks/useScrollToSection'
 import Header from './components/Header'
 import About from './components/About'
 import Experience from './components/Experiences'
 import Projects from './components/Projects'
 
 export default function App() {
-  const [activeSection, setActiveSection] = useState('about')
   const sectionRefs = useRef<{ [key: string]: HTMLElement | null }>({})
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollPosition = window.scrollY + 200
-      const windowHeight = window.innerHeight
-      const documentHeight = document.documentElement.scrollHeight
-
-      // If near bottom of page, activate last section
-      if (window.scrollY + windowHeight >= documentHeight - 100) {
-        setActiveSection(navItems[navItems.length - 1].id)
-        return
-      }
-
-      // Find the section currently in view
-      for (let i = navItems.length - 1; i >= 0; i--) {
-        const section = navItems[i]
-        const element = sectionRefs.current[section.id]
-        if (element) {
-          const { offsetTop } = element
-          if (scrollPosition >= offsetTop) {
-            setActiveSection(section.id)
-            return
-          }
-        }
-      }
-    }
-
-    // Initial check
-    handleScroll()
-
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
-
-  const scrollToSection = (sectionId: string) => {
-    const element = sectionRefs.current[sectionId]
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' })
-    }
-  }
+  const activeSection = useActiveSection(navItems, sectionRefs)
+  const scrollToSection = useScrollToSection(sectionRefs)
 
   return (
     <div className="min-h-screen bg-background">
@@ -72,7 +35,10 @@ export default function App() {
               }}
             />
 
-            <footer className="text-sm text-muted-foreground pb-24"></footer>
+            <footer className="text-sm text-muted-foreground pb-24">
+              Built with curiosity, a bit of vibe coding, and a constant search
+              for better workflows.
+            </footer>
           </main>
         </div>
       </div>

@@ -10,11 +10,11 @@ export default function Header({ activeSection, onNavigate }: HeaderProps) {
   return (
     <header className="lg:w-[45%] lg:sticky lg:top-0 lg:h-screen lg:flex lg:flex-col lg:justify-between lg:py-24">
       <div>
-        <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-foreground">
+        <h1 className="text-3xl sm:text-4xl font-bold tracking-tight text-foreground">
           Christian Montebon
         </h1>
         <h2 className="text-lg font-medium text-foreground/80 mt-3">
-          Frontend / Full-Stack Web Developer
+          Web Developer
         </h2>
         <p className="text-muted-foreground mt-4 max-w-sm leading-relaxed">
           I build clean, reliable web applications with a strong focus on
