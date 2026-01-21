@@ -67,4 +67,3 @@ export function useTypewriterNotes(notes: string[], opts: Options = {}) {
 
   return { text, isDeleting }
 }
-

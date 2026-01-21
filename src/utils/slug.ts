@@ -8,4 +8,3 @@ export function slugFromPath(filePath: string): string {
 export function notePath(slug: string): string {
   return generatePath('/notes/:slug', { slug })
 }
-

@@ -34,4 +34,3 @@ export function parseFrontmatter(raw: string): FrontmatterParseResult {
 
   return { data, content: rest }
 }
-

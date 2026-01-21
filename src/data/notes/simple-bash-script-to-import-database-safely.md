@@ -6,6 +6,7 @@ date: 2026-01-13
 i keep needing this, so I stopped rewriting it every time
 
 this script:
+
 - checks if the DB exists
 - optionally drops it
 - imports a `.sql` file

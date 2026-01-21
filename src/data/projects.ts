@@ -18,7 +18,8 @@ export const projects: Project[] = [
   },
   {
     title: 'Hayley at One – RSVP',
-    description: 'A simple, private RSVP web app for Hayley’s first birthday. Guests receive unique links per invite, can accept or decline without accounts, and are grouped by family or circle for easy headcount tracking.',
+    description:
+      'A simple, private RSVP web app for Hayley’s first birthday. Guests receive unique links per invite, can accept or decline without accounts, and are grouped by family or circle for easy headcount tracking.',
     url: 'https://hayleyatone.com',
     scope: 'Side Project',
     image: '/images/projects/hayley-at-one.png',
@@ -26,11 +27,25 @@ export const projects: Project[] = [
   },
   {
     title: 'TAGR',
-    description: 'A mobile self-checkout platform that lets shoppers use their smartphones to scan, pay, and leave stores without needing an app or account',
+    description:
+      'A mobile self-checkout platform that lets shoppers use their smartphones to scan, pay, and leave stores without needing an app or account',
     url: 'https://tagr.io',
     scope: 'Work',
     image: '/images/projects/tagr.png',
-    tools: ['React', 'Tailwind CSS', 'TypeScript', 'PWA', 'Laravel', 'MySQL', 'PHP', 'Merchant Warrior', 'VendPOS', 'Square', 'Shopify', 'Stripe'],
+    tools: [
+      'React',
+      'Tailwind CSS',
+      'TypeScript',
+      'PWA',
+      'Laravel',
+      'MySQL',
+      'PHP',
+      'Merchant Warrior',
+      'VendPOS',
+      'Square',
+      'Shopify',
+      'Stripe',
+    ],
   },
   {
     title: 'Digikey Conversion Tools',

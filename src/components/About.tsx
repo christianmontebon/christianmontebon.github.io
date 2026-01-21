@@ -17,16 +17,16 @@ export default function About({ sectionRef }: AboutProps) {
         </p>
         <p>
           My work sits at the intersection of frontend and backend development.
-          I enjoy building interfaces that feel natural to use while making
-          sure the systems behind them are scalable and easy to maintain. I've
-          spent most of my career working with JavaScript frameworks and
-          PHP-based backends, collaborating closely with designers, product
-          managers, and other engineers.
+          I enjoy building interfaces that feel natural to use while making sure
+          the systems behind them are scalable and easy to maintain. I've spent
+          most of my career working with JavaScript frameworks and PHP-based
+          backends, collaborating closely with designers, product managers, and
+          other engineers.
         </p>
         <p>
           Outside of work, I enjoy refining my workflows, learning new tools,
-          and continuously improving how I approach problem-solving in both
-          code and design.
+          and continuously improving how I approach problem-solving in both code
+          and design.
         </p>
       </div>
     </section>

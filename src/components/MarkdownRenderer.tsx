@@ -25,7 +25,10 @@ export default function MarkdownRenderer() {
       <div className="min-h-screen bg-background">
         <div className="max-w-3xl mx-auto px-6 py-16">
           <p className="text-muted-foreground">Not found.</p>
-          <Link to="/notes" className="text-sm hover:underline underline-offset-4">
+          <Link
+            to="/notes"
+            className="text-sm hover:underline underline-offset-4"
+          >
             Back to notes
           </Link>
         </div>
@@ -72,22 +75,38 @@ export default function MarkdownRenderer() {
         <article className="text-foreground">
           <ReactMarkdown
             remarkPlugins={[remarkGfm]}
-            rehypePlugins={[[rehypeRaw], [rehypeSanitize, schema], [rehypeHighlight]]}
+            rehypePlugins={[
+              [rehypeRaw],
+              [rehypeSanitize, schema],
+              [rehypeHighlight],
+            ]}
             components={{
               h1: ({ node, ...props }) => (
-                <h1 className="text-3xl font-semibold tracking-tight mt-8 mb-4" {...props} />
+                <h1
+                  className="text-3xl font-semibold tracking-tight mt-8 mb-4"
+                  {...props}
+                />
               ),
               h2: ({ node, ...props }) => (
-                <h2 className="text-2xl font-semibold tracking-tight mt-8 mb-3" {...props} />
+                <h2
+                  className="text-2xl font-semibold tracking-tight mt-8 mb-3"
+                  {...props}
+                />
               ),
               h3: ({ node, ...props }) => (
-                <h3 className="text-xl font-semibold tracking-tight mt-6 mb-3" {...props} />
+                <h3
+                  className="text-xl font-semibold tracking-tight mt-6 mb-3"
+                  {...props}
+                />
               ),
               p: ({ node, ...props }) => (
                 <p className="leading-7 mt-4 text-foreground/90" {...props} />
               ),
               a: ({ node, ...props }) => (
-                <a className="underline underline-offset-4 hover:no-underline" {...props} />
+                <a
+                  className="underline underline-offset-4 hover:no-underline"
+                  {...props}
+                />
               ),
               ul: ({ node, ...props }) => (
                 <ul className="list-disc pl-6 space-y-2 mt-4" {...props} />
@@ -95,30 +114,50 @@ export default function MarkdownRenderer() {
               ol: ({ node, ...props }) => (
                 <ol className="list-decimal pl-6 space-y-2 mt-4" {...props} />
               ),
-              li: ({ node, ...props }) => <li className="leading-7" {...props} />,
+              li: ({ node, ...props }) => (
+                <li className="leading-7" {...props} />
+              ),
               blockquote: ({ node, ...props }) => (
-                <blockquote className="mt-4 border-l-2 border-border pl-4 italic text-foreground/80 bg-foreground/5 rounded" {...props} />
+                <blockquote
+                  className="mt-4 border-l-2 border-border pl-4 italic text-foreground/80 bg-foreground/5 rounded"
+                  {...props}
+                />
               ),
               img: ({ node, ...props }) => (
                 // eslint-disable-next-line jsx-a11y/alt-text
                 <img className="mt-4 rounded" {...props} />
               ),
-              hr: ({ node, ...props }) => <hr className="my-8 border-border" {...props} />,
-              table: ({ node, ...props }) => (
-                <table className="w-full border-collapse mt-6 text-sm" {...props} />
+              hr: ({ node, ...props }) => (
+                <hr className="my-8 border-border" {...props} />
               ),
-              thead: ({ node, ...props }) => <thead className="text-foreground" {...props} />,
+              table: ({ node, ...props }) => (
+                <table
+                  className="w-full border-collapse mt-6 text-sm"
+                  {...props}
+                />
+              ),
+              thead: ({ node, ...props }) => (
+                <thead className="text-foreground" {...props} />
+              ),
               th: ({ node, ...props }) => (
-                <th className="text-left font-semibold border-b border-border pb-2" {...props} />
+                <th
+                  className="text-left font-semibold border-b border-border pb-2"
+                  {...props}
+                />
               ),
               td: ({ node, ...props }) => (
-                <td className="border-b border-border/60 py-2 align-top" {...props} />
+                <td
+                  className="border-b border-border/60 py-2 align-top"
+                  {...props}
+                />
               ),
               // TS: react-markdown's typings don't expose `inline` here; accept any for simplicity.
               // Also detect block code by presence of language-* class as a fallback.
               // eslint-disable-next-line @typescript-eslint/no-explicit-any
               code: ({ node, inline, className, ...props }: any) => {
-                const isBlock = (!inline && /language-/.test(className || '')) || (className && /language-/.test(className))
+                const isBlock =
+                  (!inline && /language-/.test(className || '')) ||
+                  (className && /language-/.test(className))
                 if (isBlock) {
                   return (
                     <code
@@ -142,7 +181,10 @@ export default function MarkdownRenderer() {
         </article>
 
         <div className="mt-10">
-          <Link to="/notes" className="text-sm hover:underline underline-offset-4">
+          <Link
+            to="/notes"
+            className="text-sm hover:underline underline-offset-4"
+          >
             ← Back to notes
           </Link>
         </div>

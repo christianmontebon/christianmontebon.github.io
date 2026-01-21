@@ -22,7 +22,9 @@ export const notes: Note[] = [
     path: 'data/notes/simple-bash-script-to-import-database-safely.md',
     title: 'Simple Bash Script to Import Database Safely',
     tags: ['demo', 'formatting'],
-    slug: slugFromPath('data/notes/simple-bash-script-to-import-database-safely.md'),
+    slug: slugFromPath(
+      'data/notes/simple-bash-script-to-import-database-safely.md'
+    ),
   },
   {
     path: 'data/notes/how-i-build-things.md',
@@ -40,8 +42,9 @@ export const notes: Note[] = [
 
 export const noteContentByPath: Record<string, string> = {
   'data/notes/hello-world.md': helloWorldRaw,
-  'data/notes/simple-bash-script-to-import-database-safely.md': simpleBashScriptToImportDatabaseSafelyRaw,
+  'data/notes/simple-bash-script-to-import-database-safely.md':
+    simpleBashScriptToImportDatabaseSafelyRaw,
   'data/notes/how-i-build-things.md': howIBuildThingsRaw,
-  'data/notes/using-ai-without-losing-control.md': usingAIWithoutLosingControlRaw,
+  'data/notes/using-ai-without-losing-control.md':
+    usingAIWithoutLosingControlRaw,
 }
-

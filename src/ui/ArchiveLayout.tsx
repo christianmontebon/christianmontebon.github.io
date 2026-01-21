@@ -50,11 +50,17 @@ export default function ArchiveLayout({
   const filteredItems = useMemo(() => {
     return items.filter(item => {
       // If tools are selected, item must have at least one selected tool
-      if (selectedTools.length > 0 && !item.tools?.some(tool => selectedTools.includes(tool))) {
+      if (
+        selectedTools.length > 0 &&
+        !item.tools?.some(tool => selectedTools.includes(tool))
+      ) {
         return false
       }
       // If scopes are selected, item must match one of the selected scopes
-      if (selectedScopes.length > 0 && (!item.scope || !selectedScopes.includes(item.scope))) {
+      if (
+        selectedScopes.length > 0 &&
+        (!item.scope || !selectedScopes.includes(item.scope))
+      ) {
         return false
       }
       return true
@@ -86,7 +92,12 @@ export default function ArchiveLayout({
             <h1 className="text-3xl font-semibold tracking-tight text-foreground">
               {title}
             </h1>
-            <Link to="/" className="text-sm text-muted-foreground hover:text-foreground transition-colors italic underline">back to home</Link>
+            <Link
+              to="/"
+              className="text-sm text-muted-foreground hover:text-foreground transition-colors italic underline"
+            >
+              back to home
+            </Link>
           </div>
           {description ? (
             <p className="text-muted-foreground mt-3">{description}</p>
@@ -99,12 +110,13 @@ export default function ArchiveLayout({
             <ul className="space-y-8">
               {filteredItems.map(item => {
                 const isAbsolute =
-                  item.slug.startsWith('http://') || item.slug.startsWith('https://')
+                  item.slug.startsWith('http://') ||
+                  item.slug.startsWith('https://')
                 const href = isAbsolute
                   ? item.slug
                   : basePath
-                  ? `${basePath}/${item.slug}`
-                  : item.slug
+                    ? `${basePath}/${item.slug}`
+                    : item.slug
                 const date = item.date
 
                 const hasImage = item.image && item.image.trim() !== ''
@@ -125,10 +137,14 @@ export default function ArchiveLayout({
                           {item.title}
                         </span>
                         {item.scope && (
-                          <span className="text-xs text-muted-foreground font-medium">{item.scope}</span>
+                          <span className="text-xs text-muted-foreground font-medium">
+                            {item.scope}
+                          </span>
                         )}
                         {date ? (
-                          <span className="text-xs text-muted-foreground">{date}</span>
+                          <span className="text-xs text-muted-foreground">
+                            {date}
+                          </span>
                         ) : null}
                       </div>
                       {item.description ? (
@@ -174,7 +190,9 @@ export default function ArchiveLayout({
                 {/* Tools filter */}
                 {allTools.length > 0 && (
                   <div>
-                    <h3 className="text-sm font-medium text-foreground mb-3">Tools</h3>
+                    <h3 className="text-sm font-medium text-foreground mb-3">
+                      Tools
+                    </h3>
                     <div className="flex flex-wrap gap-2">
                       {allTools.map(tool => (
                         <button
@@ -196,7 +214,9 @@ export default function ArchiveLayout({
                 {/* Scope filter */}
                 {allScopes.length > 0 && (
                   <div>
-                    <h3 className="text-sm font-medium text-foreground mb-3">Scope</h3>
+                    <h3 className="text-sm font-medium text-foreground mb-3">
+                      Scope
+                    </h3>
                     <div className="flex flex-wrap gap-2">
                       {allScopes.map(scope => (
                         <button

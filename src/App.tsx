@@ -79,7 +79,10 @@ export default function App() {
               <ul className="mt-4 space-y-3">
                 {latestNotes.map(note => (
                   <li key={note.slug} className="py-1">
-                    <Link to={notePath(note.slug)} className="flex items-baseline gap-3 group">
+                    <Link
+                      to={notePath(note.slug)}
+                      className="flex items-baseline gap-3 group"
+                    >
                       <span className="text-foreground group-hover:underline underline-offset-4">
                         {note.title}
                       </span>
@@ -93,7 +96,10 @@ export default function App() {
             </section>
 
             <footer className="text-sm text-muted-foreground py-24">
-              <div className="mt-2 min-h-[1.25rem] italic text-[13px] text-muted-foreground/90" aria-live="polite">
+              <div
+                className="mt-2 min-h-[1.25rem] italic text-[13px] text-muted-foreground/90"
+                aria-live="polite"
+              >
                 {footerNote}
               </div>
             </footer>

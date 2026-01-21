@@ -20,7 +20,9 @@ export default function MouseTrail() {
     const ctx = canvas.getContext('2d', { alpha: true })
     if (!ctx) return
 
-    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    const prefersReducedMotion = window.matchMedia(
+      '(prefers-reduced-motion: reduce)'
+    ).matches
     if (prefersReducedMotion) {
       return
     }
@@ -59,7 +61,10 @@ export default function MouseTrail() {
       // cap max particles to avoid buildup
       const maxParticles = 16
       if (particlesRef.current.length > maxParticles) {
-        particlesRef.current.splice(0, particlesRef.current.length - maxParticles)
+        particlesRef.current.splice(
+          0,
+          particlesRef.current.length - maxParticles
+        )
       }
     }
 
