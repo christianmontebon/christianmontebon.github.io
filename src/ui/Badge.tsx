@@ -15,4 +15,3 @@ export default function Badge({ children, className }: BadgeProps) {
 
   return <span className={`${baseClasses} ${className ?? ''}`}>{children}</span>
 }
-

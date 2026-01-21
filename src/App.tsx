@@ -11,7 +11,7 @@ import { notes, noteContentByPath } from './data/notes'
 import { Link } from 'react-router-dom'
 import { footerNotes } from './data/footerNotes'
 import { useTypewriterNotes } from './hooks/useTypewriterNotes'
-import MouseTrail from './components/MouseTrail'
+import MouseTrail from './ui/MouseTrail'
 import { notePath } from './utils/slug'
 
 export default function App() {

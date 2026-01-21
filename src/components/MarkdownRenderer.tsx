@@ -9,7 +9,7 @@ import { defaultSchema } from 'hast-util-sanitize'
 import { parseFrontmatter } from '../utils/frontmatter'
 import { notes, noteContentByPath } from '../data/notes'
 
-export default function NoteDetailPage() {
+export default function MarkdownRenderer() {
   const { slug = '' } = useParams()
 
   const match = notes.find(n => n.slug === slug)
@@ -150,4 +150,3 @@ export default function NoteDetailPage() {
     </div>
   )
 }
-

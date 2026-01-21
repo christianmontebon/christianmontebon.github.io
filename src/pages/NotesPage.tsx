@@ -1,4 +1,4 @@
-import ArchiveLayout from './ArchiveLayout'
+import ArchiveLayout from '../ui/ArchiveLayout'
 import { parseFrontmatter } from '../utils/frontmatter'
 import { notes, noteContentByPath } from '../data/notes'
 

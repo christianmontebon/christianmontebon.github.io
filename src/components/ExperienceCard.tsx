@@ -1,6 +1,6 @@
 import { ArrowUpRight } from 'lucide-react'
 import { experiences } from '../data/experiences'
-import Badge from './Badge'
+import Badge from '../ui/Badge'
 
 interface ExperienceCardProps {
   experience: (typeof experiences)[0]
