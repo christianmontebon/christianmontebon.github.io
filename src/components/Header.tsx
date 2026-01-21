@@ -27,7 +27,7 @@ export default function Header({ activeSection, onNavigate }: HeaderProps) {
       {/* Social Links */}
       <div className="flex gap-5 mt-8 lg:mt-0 py-8 lg:py-0">
         <a
-          href="https://github.com"
+          href="https://github.com/christianmontebon"
           target="_blank"
           rel="noopener noreferrer"
           className="text-muted-foreground hover:text-foreground transition-colors"
@@ -36,7 +36,7 @@ export default function Header({ activeSection, onNavigate }: HeaderProps) {
           <Github className="w-5 h-5" />
         </a>
         <a
-          href="https://linkedin.com"
+          href="https://linkedin.com/in/christianmontebon"
           target="_blank"
           rel="noopener noreferrer"
           className="text-muted-foreground hover:text-foreground transition-colors"
