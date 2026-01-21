@@ -1,11 +1,11 @@
 ---
-title: Hello World
+title: hello world
 date: 2026-01-01
 ---
 
-This is my first note.
+hello, kalibutan!
 
-Nothing fancy. Just words, thoughts, and space to think.
+this is my first note, will be sharing my thoughts, ideas, learning, and random shits.
 
-Sometimes the simplest things are enough.
+
 

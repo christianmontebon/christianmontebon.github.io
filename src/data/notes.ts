@@ -1,5 +1,5 @@
 import helloWorldRaw from '../content/notes/hello-world.md?raw'
-import complexSampleRaw from '../content/notes/complex-sample.md?raw'
+import simpleBashScriptToImportDatabaseSafelyRaw from '../content/notes/simple-bash-script-to-import-database-safely.md?raw'
 
 export type Note = {
   path: string
@@ -14,14 +14,14 @@ export const notes: Note[] = [
     tags: ['intro', 'personal'],
   },
   {
-    path: 'content/notes/complex-sample.md',
-    title: 'Complex Sample',
+    path: 'content/notes/simple-bash-script-to-import-database-safely.md',
+    title: 'Simple Bash Script to Import Database Safely',
     tags: ['demo', 'formatting'],
   },
 ]
 
 export const noteContentByPath: Record<string, string> = {
   'content/notes/hello-world.md': helloWorldRaw,
-  'content/notes/complex-sample.md': complexSampleRaw,
+  'content/notes/simple-bash-script-to-import-database-safely.md': simpleBashScriptToImportDatabaseSafelyRaw,
 }
 

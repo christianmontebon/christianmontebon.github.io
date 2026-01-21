@@ -119,13 +119,25 @@ export default function NoteDetailPage() {
                 <td className="border-b border-border/60 py-2 align-top" {...props} />
               ),
               // TS: react-markdown's typings don't expose `inline` here; accept any for simplicity.
+              // Also detect block code by presence of language-* class as a fallback.
               // eslint-disable-next-line @typescript-eslint/no-explicit-any
-              code: ({ node, inline, ...props }: any) =>
-                inline ? (
-                  <code className="px-1.5 py-0.5 rounded bg-foreground/10 text-foreground/90" {...props} />
-                ) : (
-                  <code className="block p-4 rounded bg-foreground/10 text-foreground/90 overflow-x-auto text-sm" {...props} />
-                ),
+              code: ({ node, inline, className, ...props }: any) => {
+                const isBlock = (!inline && /language-/.test(className || '')) || (className && /language-/.test(className))
+                if (isBlock) {
+                  return (
+                    <code
+                      className="block p-4 rounded bg-foreground/10 text-foreground/90 overflow-x-auto text-sm"
+                      {...props}
+                    />
+                  )
+                }
+                return (
+                  <code
+                    className="inline-block whitespace-nowrap align-baseline px-1.5 py-0.5 rounded bg-foreground/10 text-foreground/90"
+                    {...props}
+                  />
+                )
+              },
               pre: ({ node, ...props }) => <pre className="my-4" {...props} />,
             }}
           >
