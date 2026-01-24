@@ -11,7 +11,6 @@ import { notes, noteContentByPath } from './data/notes'
 import { Link } from 'react-router-dom'
 import { footerNotes } from './data/footerNotes'
 import { useTypewriterNotes } from './hooks/useTypewriterNotes'
-import MouseTrail from './ui/MouseTrail'
 import { notePath } from './utils/slug'
 
 export default function App() {
@@ -41,7 +40,6 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-background">
-      <MouseTrail />
       <div className="max-w-6xl mx-auto px-6 lg:px-12">
         <div className="lg:flex lg:gap-12">
           <Header activeSection={activeSection} onNavigate={scrollToSection} />

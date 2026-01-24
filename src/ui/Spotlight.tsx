@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 
-export default function MouseTrail() {
+export default function Spotlight() {
   const [position, setPosition] = useState<{ x: number; y: number } | null>(null)
 
   useEffect(() => {
@@ -27,17 +27,10 @@ export default function MouseTrail() {
 
   return (
     <div
-      className="pointer-events-none fixed z-10"
+      className="pointer-events-none fixed inset-0 z-10 transition duration-300"
       aria-hidden="true"
       style={{
-        left: `${position.x}px`,
-        top: `${position.y}px`,
-        width: '700px',
-        height: '700px',
-        transform: 'translate(-50%, -50%)',
-        background: `radial-gradient(circle, rgba(16, 185, 129, 0.08) 0%, rgba(16, 185, 129, 0.06) 15%, rgba(6, 182, 212, 0.04) 30%, rgba(2, 132, 199, 0.02) 45%, transparent 60%)`,
-        mixBlendMode: 'screen',
-        clipPath: 'circle(50% at 50% 50%)',
+        background: `radial-gradient(800px at ${position.x}px ${position.y}px, rgba(100, 220, 210, 0.08), transparent 90%)`,
       }}
     />
   )

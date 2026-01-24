@@ -7,9 +7,11 @@ import { HashRouter, Routes, Route } from 'react-router-dom'
 import ProjectsPage from './pages/ProjectsPage'
 import NotesPage from './pages/NotesPage'
 import MarkdownRenderer from './components/MarkdownRenderer'
+import Spotlight from './ui/Spotlight'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
+    <Spotlight />
     <HashRouter>
       <Routes>
         <Route path="/" element={<App />} />
