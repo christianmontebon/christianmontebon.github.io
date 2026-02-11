@@ -9,10 +9,26 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    title: 'Can I Wash Clothes Today?',
+    description: "Can I Wash Clothes Today turns live weather data into practical laundry advice. It’s also a personal SEO learning project, built to experiment with scalable city pages and search optimization.",
+    url: 'https://caniwashclothestoday.com',
+    scope: 'Side Project',
+    image: '/images/projects/can-i-wash-clothes-today.png',
+    tools: [
+      'Next.js',
+      'TypeScript',
+      'Tailwind CSS',
+      'OpenWeather API',
+      'Google Search Console',
+      'Google Analytics',
+      'Structured Data (JSON-LD)',
+    ],
+  },
+  {
     title: 'Local Storage Manager Chrome Extension',
     description: 'Local Storage Manager is a developer tool for inspecting and managing browser localStorage in a dedicated, full-page workspace.',
     url: 'https://chromewebstore.google.com/detail/local-storage-manager/gecfgmjgechopncdaombkegdfhblkmog',
-    scope: 'Personal',
+    scope: 'Side Project',
     image: '/images/projects/localstorage-manage-chrome-ext.png',
     tools: ['Chrome Extension', 'Javascript'],
   },
