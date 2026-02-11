@@ -3,6 +3,7 @@ import simpleBashScriptToImportDatabaseSafelyRaw from './notes/simple-bash-scrip
 import howIBuildThingsRaw from './notes/how-i-build-things.md?raw'
 import usingAIWithoutLosingControlRaw from './notes/using-ai-without-losing-control.md?raw'
 import idealVsDamageControlRaw from './notes/ideal-vs-damage-control.md?raw'
+import whatILearnedBuildingCanIWashClothesTodayRaw from './notes/what-i-learned-building-can-i-wash-clothes-today.md?raw'
 
 const NOTES_DIR = 'data/notes'
 
@@ -52,6 +53,12 @@ const noteInputs: NoteInput[] = [
     date: '2026-01-22',
     content: idealVsDamageControlRaw,
   },
+  {
+    filename: 'what-i-learned-building-can-i-wash-clothes-today.md',
+    tags: ['learnings'],
+    date: '2026-02-11',
+    content: whatILearnedBuildingCanIWashClothesTodayRaw,
+  }
 ]
 
 export type Note = {
