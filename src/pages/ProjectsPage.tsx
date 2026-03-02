@@ -9,6 +9,7 @@ export default function ProjectsPage() {
     scope: p.scope,
     tools: p.tools,
     image: p.image,
+    scrollToTop: p.isCurrentSite,
   }))
 
   return (

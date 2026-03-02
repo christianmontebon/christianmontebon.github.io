@@ -10,6 +10,8 @@ interface ArchiveItem {
   tools?: string[]
   tags?: string[]
   image?: string
+  /** When true, clicking scrolls to top instead of navigating (for current site) */
+  scrollToTop?: boolean
 }
 
 interface ArchiveLayoutProps {
@@ -133,6 +135,7 @@ export default function ArchiveLayout({
           <div className="lg:col-span-2">
             <ul className="space-y-8">
               {filteredItems.map(item => {
+                const isScrollToTop = item.scrollToTop === true
                 const isAbsolute =
                   item.slug.startsWith('http://') ||
                   item.slug.startsWith('https://')
@@ -193,7 +196,17 @@ export default function ArchiveLayout({
 
                 return (
                   <li key={item.slug} className="py-1">
-                    {isAbsolute ? (
+                    {isScrollToTop ? (
+                      <button
+                        type="button"
+                        onClick={() =>
+                          window.scrollTo({ top: 0, behavior: 'smooth' })
+                        }
+                        className="block w-full text-left cursor-pointer"
+                      >
+                        {content}
+                      </button>
+                    ) : isAbsolute ? (
                       <a
                         href={href}
                         target="_blank"

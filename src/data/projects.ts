@@ -5,6 +5,8 @@ export type Project = {
   scope: 'Personal' | 'Work' | 'Side Project'
   image: string
   tools: string[]
+  /** When true, clicking scrolls to top instead of opening the link (for this site) */
+  isCurrentSite?: boolean
 }
 
 export const projects: Project[] = [
@@ -39,12 +41,13 @@ export const projects: Project[] = [
     scope: 'Personal',
     image: '/images/projects/christianmontebon.github.io.png',
     tools: ['React', 'Tailwind CSS', 'TypeScript'],
+    isCurrentSite: true,
   },
   {
     title: 'Hayley at One – RSVP',
     description:
       'A simple, private RSVP web app for Hayley’s first birthday. Guests receive unique links per invite, can accept or decline without accounts, and are grouped by family or circle for easy headcount tracking.',
-    url: 'https://hayley-at-one-cms-projects-14a7cb7c.vercel.app/',
+    url: 'https://hayleyturns.one/',
     scope: 'Side Project',
     image: '/images/projects/hayley-at-one.png',
     tools: ['React', 'Supabase', 'Next.js', 'Tailwind CSS', 'TypeScript'],

@@ -42,18 +42,6 @@ const noteInputs: NoteInput[] = [
     content: howIBuildThingsRaw,
   },
   {
-    filename: 'using-ai-without-losing-control.md',
-    tags: ['thoughts'],
-    date: '2026-01-07',
-    content: usingAIWithoutLosingControlRaw,
-  },
-  {
-    filename: 'ideal-vs-damage-control.md',
-    tags: ['thoughts'],
-    date: '2026-01-22',
-    content: idealVsDamageControlRaw,
-  },
-  {
     filename: 'what-i-learned-building-can-i-wash-clothes-today.md',
     tags: ['learnings'],
     date: '2026-02-11',
