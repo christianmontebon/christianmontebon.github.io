@@ -22,6 +22,10 @@ export function useActiveSection(
     const visible: Record<string, boolean> = {}
     const io = new IntersectionObserver(
       entries => {
+        if (window.scrollY < 80) {
+          setActiveSection(navItems[0].id)
+          return
+        }
         for (const entry of entries) {
           const id = (entry.target as HTMLElement).id
           visible[id] = entry.isIntersecting
@@ -44,21 +48,23 @@ export function useActiveSection(
     )
 
     elements.forEach(el => io.observe(el))
-    // Bottom-of-page fallback: ensure last section activates when near bottom
-    const handleBottom = () => {
+    // Top-of-page fallback: ensure about activates when scrolled to top
+    const handleScroll = () => {
       const winH = window.innerHeight
       const docH = document.documentElement.scrollHeight
       const scrollY = window.scrollY
-      if (scrollY + winH >= docH - 80) {
+      if (scrollY < 80) {
+        setActiveSection(navItems[0].id)
+      } else if (scrollY + winH >= docH - 80) {
         setActiveSection(navItems[navItems.length - 1].id)
       }
     }
-    window.addEventListener('scroll', handleBottom, { passive: true })
-    handleBottom()
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    handleScroll()
 
     return () => {
       io.disconnect()
-      window.removeEventListener('scroll', handleBottom)
+      window.removeEventListener('scroll', handleScroll)
     }
   }, [navItems, sectionRefs])
 
